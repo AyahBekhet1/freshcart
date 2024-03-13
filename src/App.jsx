@@ -30,12 +30,14 @@ import ResetPassword from './Component/ResetPassword/ResetPassword.jsx';
 let routes= createBrowserRouter([
   {path:'/' , element: <Layout  /> , children:[
     {index:true , element: <ProtectedRoute> <Home /> </ProtectedRoute> },
+    {path:'home', element: <ProtectedRoute> <Home /> </ProtectedRoute> },
     {path:'brands' , element :<ProtectedRoute> <Brands /></ProtectedRoute> },
     {path:'categories' , element:<ProtectedRoute> <Categories /></ProtectedRoute> },
     {path:'wishlist' , element:<ProtectedRoute> <Wishlist /></ProtectedRoute> },
     {path:'checkout' , element:<ProtectedRoute> <Checkout /></ProtectedRoute> },
     {path :'login' , element :<Login />  },
     {path:'register' , element : <Register /> },
+    {path:'freshcart' , element : <Register /> },
     {path:'forget-password' , element : <ForgetPass /> },
     {path:'verify-code' , element : <VerifyCode /> },
     {path:'reset-password' , element : <ResetPassword /> },
