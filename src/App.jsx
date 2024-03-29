@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
 import './App.css';
 import React, { useContext } from 'react';
 import Layout from './Component/Layout/Layout.jsx';
@@ -11,7 +11,7 @@ import Register from './Component/Register/Register.jsx';
 import Products from './Component/Products/Products.jsx';
 import Cart from './Component/Cart/Cart.jsx';
 
-import UserContextProvider, { UserContext } from './Context/UserContext.js';
+import  { UserContext } from './Context/UserContext.js';
 import { useEffect } from 'react';
 import ProtectedRoute from './Component/ProtectedRoute/ProtectedRoute.jsx';
 import ProductDetails from './Component/ProductDetails/ProductDetails.jsx';
@@ -27,7 +27,7 @@ import ResetPassword from './Component/ResetPassword/ResetPassword.jsx';
 
 
 
-let routes= createBrowserRouter([
+let routes= createHashRouter([
   {path:'/' , element: <Layout  /> , children:[
     {index:true , element: <ProtectedRoute> <Home /> </ProtectedRoute> },
     {path:'home', element: <ProtectedRoute> <Home /> </ProtectedRoute> },
@@ -37,7 +37,7 @@ let routes= createBrowserRouter([
     {path:'checkout' , element:<ProtectedRoute> <Checkout /></ProtectedRoute> },
     {path :'login' , element :<Login />  },
     {path:'register' , element : <Register /> },
-    {path:'freshcart' , element : <Register /> },
+    // {path:'freshcart' , element : <Register /> },
     {path:'forget-password' , element : <ForgetPass /> },
     {path:'verify-code' , element : <VerifyCode /> },
     {path:'reset-password' , element : <ResetPassword /> },
