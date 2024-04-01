@@ -17,11 +17,15 @@ import CartContextProvider from './Context/CartContext';
 
 import {Toaster} from 'react-hot-toast'
 import WishlistProvider from './Context/WishlistContext';
+import { Provider } from 'react-redux';
+import { store } from './Redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let queryClient = new QueryClient()
 root.render(
+    <Provider store={store}>
+
     <QueryClientProvider client={queryClient}>
 
     <UserContextProvider>
@@ -37,6 +41,7 @@ root.render(
     </UserContextProvider>
     <ReactQueryDevtools intialIsopen='false' position='bottom-right' />
     </QueryClientProvider>
+    </Provider>
 );
 
 
