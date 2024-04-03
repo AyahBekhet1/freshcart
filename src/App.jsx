@@ -32,7 +32,7 @@ let routes= createHashRouter([
   {path:'/' , element: <Layout  /> , children:[
     {index:true , element: <ProtectedRoute> <Home /> </ProtectedRoute> },
     {path:'home', element: <ProtectedRoute> <Home /> </ProtectedRoute> },
-    {path:'freshcart', element: <ProtectedRoute> <Home /> </ProtectedRoute> },
+    {path:'freshcart/', element: <ProtectedRoute> <Home /> </ProtectedRoute> },
     {path:'brands' , element :<ProtectedRoute> <Brands /></ProtectedRoute> },
     {path:'categories' , element:<ProtectedRoute> <Categories /></ProtectedRoute> },
     {path:'wishlist' , element:<ProtectedRoute> <Wishlist /></ProtectedRoute> },
