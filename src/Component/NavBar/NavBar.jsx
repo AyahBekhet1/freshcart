@@ -65,8 +65,11 @@ function NavBar() {
           
         <li className="nav-item position-relative me-3">
           <Link className="nav-link " to='/cart'>
+            <span className='position-relative'>
             <i className='fa fa-shopping-cart fs-4'></i>
             <span className=' cart-num bg-main  text-white p-1 text-center  position-absolute '>{numOfCartItems}</span>
+            </span>
+
           </Link>
         </li>
         <li className="nav-item">

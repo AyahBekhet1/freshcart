@@ -14,11 +14,10 @@ function Products() {
 
     let [wishlist , setWishlist]=useState(localStorage.getItem('wishlist')?.split(','))
     
-    console.log(wishlist);
     async function addProduct (productId){
        const toastId= toast.loading('Waiting...');
         let responce = await addToCart(productId)
-        setNumOfCartItems(responce.data.numOfCartItems)
+        setNumOfCartItems(responce?.data.numOfCartItems)
 
         if(responce.data.status === 'success'){
             toast.success(responce.data.message , {

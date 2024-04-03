@@ -9,8 +9,15 @@ let counterSlice = createSlice({
     name:'counter',
     initialState,
     reducers:{
-        increase:(state)=>{
+        increase:(state,action)=>{
             state.counter++
+            console.log(action);
+        },
+        decrease:(state)=>{
+            state.counter--
+        },
+        incrementBynum:(state,action)=>{
+            state.counter+=action.payload
         }
     }
     
@@ -18,3 +25,6 @@ let counterSlice = createSlice({
 
 
 export let counterReducer = counterSlice.reducer
+
+export let {increase , decrease,incrementBynum} = counterSlice.actions
+

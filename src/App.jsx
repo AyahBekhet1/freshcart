@@ -28,7 +28,7 @@ import { Provider } from 'react-redux';
 
 
 
-let routes= createHashRouter([
+let routes= createBrowserRouter([
   {path:'/' , element: <Layout  /> , children:[
     {index:true , element: <ProtectedRoute> <Home /> </ProtectedRoute> },
     {path:'home', element: <ProtectedRoute> <Home /> </ProtectedRoute> },
